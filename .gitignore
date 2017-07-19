@@ -1,0 +1,15 @@
+# filter config files, except .gitignore and .gitkeep
+.*
+!.gitignore
+!.gitkeep
+*.iml
+
+
+# filter directories
+target/
+bin/
+out/
+
+# filter other files
+*.log
+*.bak
