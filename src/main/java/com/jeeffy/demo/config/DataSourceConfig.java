@@ -9,7 +9,7 @@ import org.springframework.core.env.Environment;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-@Configuration
+//@Configuration
 public class DataSourceConfig {
     @Autowired
     private Environment env;
