@@ -130,10 +130,10 @@
 			#{userPy},
 			#{userWb},
 			#{userRemark},
-			#{userCreateDate},
-			#{userUpdateDate},
-			#{userCreateUser},
-			#{userUpdateUser}
+			now(),
+			now(),
+			1,
+			1
 		)
     </insert>
     
@@ -151,11 +151,7 @@
 			user_isdel = #{userIsdel},
 			user_py = #{userPy},
 			user_wb = #{userWb},
-			user_remark = #{userRemark},
-			user_create_date = #{userCreateDate},
-			user_update_date = #{userUpdateDate},
-			user_create_user = #{userCreateUser},
-			user_update_user = #{userUpdateUser}
+			user_remark = #{userRemark}
 		WHERE user_id = #{userId}
     </update>
     
