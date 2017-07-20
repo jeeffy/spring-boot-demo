@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 public class MyBatisConfig {
 
     @Autowired
@@ -26,7 +26,7 @@ public class MyBatisConfig {
         configuration.setJdbcTypeForNull(JdbcType.NULL);
         sessionFactory.setConfiguration(configuration);
 
-        sessionFactory.setMapperLocations(applicationContext.getResources("classpath:mapper/*.xml"));
+        sessionFactory.setMapperLocations(applicationContext.getResources("classpath*:com/**/mapper/*.xml"));
         return sessionFactory;
     }
 

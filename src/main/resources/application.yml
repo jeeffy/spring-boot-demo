@@ -14,8 +14,8 @@ spring:
     username: root
     password: admin
 
-mybatis:
-  mapperLocations: classpath:/com/jeeffy/**/mapper/*.xml
+#mybatis:
+#  mapperLocations: classpath:/com/jeeffy/**/mapper/*.xml
 
 security:
   basic:
