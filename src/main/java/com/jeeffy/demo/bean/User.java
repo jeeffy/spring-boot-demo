@@ -1,157 +1,68 @@
 package com.jeeffy.demo.bean;
 
-import java.util.Date;
 
 
 public class User {
-	private Integer userId;
-	private String userAccount;
-	private String userPswd;
-	private Integer userDeptId;
-	private String userCode;
-	private String userName;
-	private Integer userSex;
-	private String userPhone;
-	private Integer userType;
-	private String userMail;
-	private Integer userIsdel;
-	private String userPy;
-	private String userWb;
-	private String userRemark;
-	private Date userCreateDate;
-	private Date userUpdateDate;
-	private Integer userCreateUser;
-	private Integer userUpdateUser;
+	private Integer id;
+	private Integer deptId;
+	private String account;
+	private String username;
+	private Integer male;
+	private String phone;
+	private String mail;
 
-	public Integer getUserId() {
-		return userId;
+	public Integer getId() {
+		return id;
 	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getUserAccount() {
-		return userAccount;
+	public Integer getDeptId() {
+		return deptId;
 	}
-	public void setUserAccount(String userAccount) {
-		this.userAccount = userAccount;
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
 	}
-	public String getUserPswd() {
-		return userPswd;
+	public String getAccount() {
+		return account;
 	}
-	public void setUserPswd(String userPswd) {
-		this.userPswd = userPswd;
+	public void setAccount(String account) {
+		this.account = account;
 	}
-	public Integer getUserDeptId() {
-		return userDeptId;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserDeptId(Integer userDeptId) {
-		this.userDeptId = userDeptId;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getUserCode() {
-		return userCode;
+	public Integer getMale() {
+		return male;
 	}
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
+	public void setMale(Integer male) {
+		this.male = male;
 	}
-	public String getUserName() {
-		return userName;
+	public String getPhone() {
+		return phone;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public Integer getUserSex() {
-		return userSex;
+	public String getMail() {
+		return mail;
 	}
-	public void setUserSex(Integer userSex) {
-		this.userSex = userSex;
-	}
-	public String getUserPhone() {
-		return userPhone;
-	}
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
-	}
-	public Integer getUserType() {
-		return userType;
-	}
-	public void setUserType(Integer userType) {
-		this.userType = userType;
-	}
-	public String getUserMail() {
-		return userMail;
-	}
-	public void setUserMail(String userMail) {
-		this.userMail = userMail;
-	}
-	public Integer getUserIsdel() {
-		return userIsdel;
-	}
-	public void setUserIsdel(Integer userIsdel) {
-		this.userIsdel = userIsdel;
-	}
-	public String getUserPy() {
-		return userPy;
-	}
-	public void setUserPy(String userPy) {
-		this.userPy = userPy;
-	}
-	public String getUserWb() {
-		return userWb;
-	}
-	public void setUserWb(String userWb) {
-		this.userWb = userWb;
-	}
-	public String getUserRemark() {
-		return userRemark;
-	}
-	public void setUserRemark(String userRemark) {
-		this.userRemark = userRemark;
-	}
-	public Date getUserCreateDate() {
-		return userCreateDate;
-	}
-	public void setUserCreateDate(Date userCreateDate) {
-		this.userCreateDate = userCreateDate;
-	}
-	public Date getUserUpdateDate() {
-		return userUpdateDate;
-	}
-	public void setUserUpdateDate(Date userUpdateDate) {
-		this.userUpdateDate = userUpdateDate;
-	}
-	public Integer getUserCreateUser() {
-		return userCreateUser;
-	}
-	public void setUserCreateUser(Integer userCreateUser) {
-		this.userCreateUser = userCreateUser;
-	}
-	public Integer getUserUpdateUser() {
-		return userUpdateUser;
-	}
-	public void setUserUpdateUser(Integer userUpdateUser) {
-		this.userUpdateUser = userUpdateUser;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 	@Override
 	public String toString() {
 		return "User{" +
-			"userId=" + userId +
-			", userAccount=" + userAccount +
-			", userPswd=" + userPswd +
-			", userDeptId=" + userDeptId +
-			", userCode=" + userCode +
-			", userName=" + userName +
-			", userSex=" + userSex +
-			", userPhone=" + userPhone +
-			", userType=" + userType +
-			", userMail=" + userMail +
-			", userIsdel=" + userIsdel +
-			", userPy=" + userPy +
-			", userWb=" + userWb +
-			", userRemark=" + userRemark +
-			", userCreateDate=" + userCreateDate +
-			", userUpdateDate=" + userUpdateDate +
-			", userCreateUser=" + userCreateUser +
-			", userUpdateUser=" + userUpdateUser +
+			"id=" + id +
+			", deptId=" + deptId +
+			", account=" + account +
+			", username=" + username +
+			", male=" + male +
+			", phone=" + phone +
+			", mail=" + mail +
 			'}';
 		}
 }

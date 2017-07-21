@@ -18,8 +18,8 @@ public class UserService {
 	    return userDao.getByMap(map);
 	}
 	
-	public User getById(Integer userId) {
-		return userDao.getById(userId);
+	public User getById(Integer id) {
+		return userDao.getById(id);
 	}
 	
 	public User create(User user) {
@@ -32,8 +32,8 @@ public class UserService {
 		return user;
 	}
 	
-	public int delete(Integer userId) {
-		return userDao.delete(userId);
+	public int delete(Integer id) {
+		return userDao.delete(id);
 	}
     
 }

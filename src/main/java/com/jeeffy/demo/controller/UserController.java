@@ -23,28 +23,24 @@ public class UserController {
 		return userService.getByMap(null);
     }
 	
-	//@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
-    @GetMapping("/{userId}")
-    public User detail(@PathVariable Integer userId) {
-		return userService.getById(userId);
+	@GetMapping("/{id}")
+    public User detail(@PathVariable Integer id) {
+		return userService.getById(id);
     }
     
-    //@RequestMapping(method = RequestMethod.POST)
     @PostMapping
     public User create(User user) {
 		return userService.create(user);
     }
 
-    //@RequestMapping(method = RequestMethod.PUT)
-    @PutMapping("/{userId}")
+    @PutMapping("/{id}")
     public User update(User user) {
 		return userService.update(user);
     }
     
-    //@RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
-    @DeleteMapping("/{userId}")
-    public int delete(@PathVariable Integer userId) {
-		return userService.delete(userId);
+    @DeleteMapping("/{id}")
+    public int delete(@PathVariable Integer id) {
+		return userService.delete(id);
     }
     
 }

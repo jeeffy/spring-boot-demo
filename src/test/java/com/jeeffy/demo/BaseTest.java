@@ -10,9 +10,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-/**
- * Created by jiangfeng on 2017/7/20.
- */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class BaseTest {

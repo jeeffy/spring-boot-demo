@@ -8,8 +8,8 @@ import com.jeeffy.demo.bean.User;
 public interface UserDao {
 
 	List<User> getByMap(Map<String, Object> map);
-	User getById(Integer userId);
+	User getById(Integer id);
 	Integer create(User user);
 	int update(User user);
-	int delete(Integer userId);
+	int delete(Integer id);
 }
