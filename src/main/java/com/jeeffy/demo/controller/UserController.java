@@ -27,8 +27,8 @@ public class UserController {
     }
 
     @RequestMapping("/users")
-    public List<User> findAll() {
-        return userService.findAll();
+    public List<User> findAll(User user) {
+        return userService.findAll(user);
     }
 
     @RequestMapping("/users/{deptId}/{page}")
