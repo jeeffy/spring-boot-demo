@@ -9,6 +9,8 @@
 		<result property="male" column="male"/>
 		<result property="phone" column="phone"/>
 		<result property="mail" column="mail"/>
+		<result property="createBy" column="create_by"/>
+		<result property="createTime" column="create_time"/>
 
     </resultMap>
     
@@ -59,7 +61,9 @@
 			username,
 			male,
 			phone,
-			mail
+			mail,
+			create_by,
+			create_time
 		)VALUES(
 			#{id},
 			#{deptId},
@@ -67,7 +71,9 @@
 			#{username},
 			#{male},
 			#{phone},
-			#{mail}
+			#{mail},
+			#{createBy},
+			NOW()
 		)
     </insert>
     

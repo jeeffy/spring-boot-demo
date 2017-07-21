@@ -1,5 +1,10 @@
 package com.jeeffy.demo.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 
 public class User {
@@ -10,6 +15,12 @@ public class User {
 	private Integer male;
 	private String phone;
 	private String mail;
+
+	@JsonIgnore
+	private String createBy;
+
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	private Date createTime;
 
 	public Integer getId() {
 		return id;
@@ -53,6 +64,18 @@ public class User {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+	public String getCreateBy() {
+		return createBy;
+	}
+	public void setCreateBy(String createBy) {
+		this.createBy = createBy;
+	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
 	@Override
 	public String toString() {
 		return "User{" +
@@ -63,6 +86,8 @@ public class User {
 			", male=" + male +
 			", phone=" + phone +
 			", mail=" + mail +
+			", createBy=" + createBy +
+			", createTime=" + createTime +
 			'}';
 		}
 }
