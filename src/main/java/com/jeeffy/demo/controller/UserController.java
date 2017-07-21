@@ -18,9 +18,9 @@ public class UserController {
 	private UserService userService;
 	
 	
-	@GetMapping
-    public List<User> list(HttpServletRequest request) {
-		return userService.getByMap(null);
+	@PostMapping
+    public List<User> findAll(User user) {
+		return userService.findAll(user);
     }
 	
 	@GetMapping("/{id}")
@@ -28,7 +28,7 @@ public class UserController {
 		return userService.getById(id);
     }
     
-    @PostMapping
+    //@PostMapping
     public User create(User user) {
 		return userService.create(user);
     }
