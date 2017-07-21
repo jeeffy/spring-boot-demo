@@ -31,13 +31,13 @@ public class UserController {
     
     //@RequestMapping(method = RequestMethod.POST)
     @PostMapping
-    public User create(@RequestBody User user) {
+    public User create(User user) {
 		return userService.create(user);
     }
 
     //@RequestMapping(method = RequestMethod.PUT)
-    @PutMapping
-    public User update(@RequestBody User user) {
+    @PutMapping("/{userId}")
+    public User update(User user) {
 		return userService.update(user);
     }
     
