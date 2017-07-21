@@ -3,7 +3,7 @@ package com.jeeffy.demo.service;
 import java.util.List;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +15,8 @@ public class UserService {
     @Autowired
 	private UserDao userDao;
 	
-	public List<User> findAll(User user) {
-		Object map = JSONObject.toJSON(user);
+	public List<User> get(User user) {
+	    Map map = (Map)JSON.toJSON(user);
 	    return userDao.getByMap(map);
 	}
 	

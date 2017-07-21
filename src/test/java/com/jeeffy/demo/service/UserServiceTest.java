@@ -17,7 +17,7 @@ public class UserServiceTest extends BaseTest {
 
 	@Test
 	public void testGetByMap() {
-    	List<User> list = userService.findAll(null);
+    	List<User> list = userService.get(null);
 		assertNotNull(list);
 	}
 

@@ -2,8 +2,6 @@ package com.jeeffy.demo.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,9 +16,9 @@ public class UserController {
 	private UserService userService;
 	
 	
-	@PostMapping
-    public List<User> findAll(User user) {
-		return userService.findAll(user);
+	@GetMapping
+    public List<User> list(User user) {
+		return userService.get(user);
     }
 	
 	@GetMapping("/{id}")
@@ -28,7 +26,7 @@ public class UserController {
 		return userService.getById(id);
     }
     
-    //@PostMapping
+    @PostMapping
     public User create(User user) {
 		return userService.create(user);
     }
