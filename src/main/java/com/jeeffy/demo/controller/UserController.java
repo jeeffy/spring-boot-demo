@@ -1,38 +1,39 @@
 package com.jeeffy.demo.controller;
 
-import com.jeeffy.demo.domain.User;
-import com.jeeffy.demo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
-/**
- * Created by jiangfeng on 2017/7/18.
- */
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.jeeffy.demo.bean.User;
+import com.jeeffy.demo.service.UserService;
+
+@RequestMapping(value = "/users")
 @RestController
 public class UserController {
-
-    @Autowired
-    private UserService userService;
-
-    @RequestMapping("/")
-    public String home() {
-        return "Hello SpringBoot!";
+	
+	@Autowired
+	private UserService userService;
+	
+	
+	@GetMapping
+    public List<User> list(User user) {
+		return userService.get(user);
+    }
+	
+	@GetMapping("/{id}")
+    public User detail(@PathVariable Integer id) {
+		return userService.getById(id);
+    }
+    
+    @PostMapping
+    public User save(User user) {
+		return userService.save(user);
     }
 
-    @RequestMapping("/users")
-    public List<User> findAll(User user) {
-        return userService.findAll(user);
+    @DeleteMapping("/{id}")
+    public int delete(@PathVariable Integer id) {
+		return userService.delete(id);
     }
-
-    @RequestMapping("/users/{deptId}/{page}")
-    public Page<User> findByUserDeptId(@PathVariable Integer deptId, @PathVariable Integer page) {
-        return userService.findByUserDeptId(deptId, page);
-    }
+    
 }
