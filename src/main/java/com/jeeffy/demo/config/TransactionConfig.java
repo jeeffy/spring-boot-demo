@@ -9,7 +9,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
-//@Configuration
+@Configuration
 public class TransactionConfig implements TransactionManagementConfigurer{
 
     @Autowired
@@ -20,6 +20,5 @@ public class TransactionConfig implements TransactionManagementConfigurer{
     public PlatformTransactionManager annotationDrivenTransactionManager() {
         return new DataSourceTransactionManager(dataSource);
     }
-
 
 }

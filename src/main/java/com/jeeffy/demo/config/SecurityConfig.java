@@ -9,16 +9,17 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
-//@Configuration
+@Configuration
 //@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.httpBasic().disable();
+        /*http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/users/**")
+                .antMatchers("/users*//**")
                 .authenticated()
                 .antMatchers(HttpMethod.POST)
                 .authenticated()
@@ -26,12 +27,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .antMatchers(HttpMethod.DELETE)
                 .authenticated()
-                .antMatchers("/**")
+                .antMatchers("*//**")
                 .permitAll()
                 .and()
                 .sessionManagement()
                 .and()
-                .httpBasic();
+                .httpBasic();*/
     }
 
     @Autowired
