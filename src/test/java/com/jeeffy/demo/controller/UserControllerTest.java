@@ -30,7 +30,7 @@ public class UserControllerTest extends BaseTest {
 
     @Test
     public void testSave() throws Exception {
-        String data = "";
+        String data = "id=125&username=张三&account=qa";
         mvc.perform(post(baseUrl)
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .content(data)

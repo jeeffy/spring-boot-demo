@@ -10,9 +10,9 @@ spring:
       active: dev
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.129.161:3306/csmp
+    url: jdbc:mysql://localhost:3306/test
     username: root
-    password: root
+    password: admin
 
 security:
   basic:
