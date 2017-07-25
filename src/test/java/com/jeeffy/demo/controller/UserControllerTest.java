@@ -16,7 +16,11 @@ public class UserControllerTest extends BaseTest {
 
     @Test
     public void testList() throws Exception {
-        mvc.perform(get(baseUrl))
+        String data = "deptId=10";
+        mvc.perform(get(baseUrl)
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .content(data)
+        )
                 .andDo(print())
                 .andExpect(jsonPath("$").isArray());
     }
@@ -42,7 +46,7 @@ public class UserControllerTest extends BaseTest {
     @Test
     public void testUpdate() throws Exception {
         String data = "";
-        mvc.perform(put(baseUrl)
+        mvc.perform(put(baseUrl + id)
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .content(data)
         )
