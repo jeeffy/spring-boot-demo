@@ -35,5 +35,8 @@ public class BillService {
 		billDao.delete(billId);
 		return 1;
 	}
-    
+
+	public List<Bill> findByUsername(String username){
+		return billDao.findByUsername(username);
+	}
 }

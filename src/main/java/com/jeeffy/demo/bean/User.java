@@ -1,5 +1,7 @@
 package com.jeeffy.demo.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +23,7 @@ public class User{
 	private String createBy;
 	private Date createTime;
 
+	@JsonIgnoreProperties("user")
 	@OneToMany(mappedBy = "user")
 	private List<Bill> bills;
 

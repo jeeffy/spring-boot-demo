@@ -20,10 +20,16 @@ public class BillController {
     public List<Bill> list(Bill bill) {
 		return billService.get(bill);
     }
-	
-	@GetMapping("/{id}")
+
+    @GetMapping("/username/{username}")
+    public List<Bill> list(@PathVariable String username) {
+        return billService.findByUsername(username);
+    }
+
+	@GetMapping("/{billId}")
     public Bill detail(@PathVariable Integer billId) {
-		return billService.getById(billId);
+        Bill bill = billService.getById(billId);
+		return bill;
     }
     
     @PostMapping
@@ -31,7 +37,7 @@ public class BillController {
 		return billService.save(bill);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{billId}")
     public int delete(@PathVariable Integer billId) {
 		return billService.delete(billId);
     }
