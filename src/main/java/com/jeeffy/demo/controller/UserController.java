@@ -20,7 +20,17 @@ public class UserController {
     public List<User> list(User user) {
 		return userService.list(user);
     }
-	
+
+    @GetMapping("/deptId")
+    public List<User> findByDeptId(Integer deptId) {
+        return userService.findByDeptId(deptId);
+    }
+
+    @GetMapping("/name/{username}")
+    public User get(@PathVariable String username) {
+        return userService.findByUsername(username);
+    }
+
 	@GetMapping("/{id}")
     public User get(@PathVariable Integer id) {
 		return userService.get(id);

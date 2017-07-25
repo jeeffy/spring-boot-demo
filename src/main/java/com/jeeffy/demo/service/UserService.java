@@ -35,5 +35,12 @@ public class UserService {
 		userDao.delete(id);
 		return 1;
 	}
-    
+
+	public User findByUsername(String username){
+		return  userDao.findByUsername(username);
+	}
+
+	public List<User> findByDeptId(Integer deptId){
+		return userDao.findByDeptId(deptId);
+	}
 }
