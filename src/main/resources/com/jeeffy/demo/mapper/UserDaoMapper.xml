@@ -41,12 +41,12 @@
         </where>
     </sql>
     	
-    <select id="getByMap" parameterType="map" resultMap="userMap">
+    <select id="list" parameterType="map" resultMap="userMap">
     	SELECT * FROM sys_user
 		<include refid="queryCondition" />
     </select>
     
-    <select id="getById" parameterType="int" resultMap="userMap">
+    <select id="get" parameterType="int" resultMap="userMap">
     	SELECT * FROM sys_user WHERE id =#{id}
     </select>
     

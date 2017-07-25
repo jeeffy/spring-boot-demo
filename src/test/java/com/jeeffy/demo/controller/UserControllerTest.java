@@ -16,7 +16,7 @@ public class UserControllerTest extends BaseTest {
 
     @Test
     public void testList() throws Exception {
-        String data = "deptId=10";
+        String data = "";
         mvc.perform(get(baseUrl)
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .content(data)
@@ -26,7 +26,7 @@ public class UserControllerTest extends BaseTest {
     }
 
     @Test
-    public void testDetail() throws Exception {
+    public void testGet() throws Exception {
         mvc.perform(get(baseUrl + id))
                 .andDo(print())
                 .andExpect(jsonPath("$").exists());

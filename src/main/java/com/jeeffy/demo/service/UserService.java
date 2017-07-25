@@ -15,13 +15,13 @@ public class UserService {
     @Autowired
 	private UserDao userDao;
 	
-	public List<User> get(User user) {
+	public List<User> list(User user) {
 	    Map map = (Map)JSON.toJSON(user);
-	    return userDao.getByMap(map);
+	    return userDao.list(map);
 	}
 	
-	public User getById(Integer id) {
-		return userDao.getById(id);
+	public User get(Integer id) {
+		return userDao.get(id);
 	}
 	
 	public User create(User user) {

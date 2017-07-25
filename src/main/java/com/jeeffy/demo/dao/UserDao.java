@@ -7,8 +7,8 @@ import com.jeeffy.demo.bean.User;
 
 public interface UserDao {
 
-	List<User> getByMap(Map map);
-	User getById(Integer id);
+	List<User> list(Map map);
+	User get(Integer id);
 	Integer create(User user);
 	int update(User user);
 	int delete(Integer id);
