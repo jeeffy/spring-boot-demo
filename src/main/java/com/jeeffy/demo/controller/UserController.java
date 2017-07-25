@@ -18,12 +18,12 @@ public class UserController {
 	
 	@GetMapping
     public List<User> list(User user) {
-		return userService.get(user);
+		return userService.list(user);
     }
 	
 	@GetMapping("/{id}")
-    public User detail(@PathVariable Integer id) {
-		return userService.getById(id);
+    public User get(@PathVariable Integer id) {
+		return userService.get(id);
     }
     
     @PostMapping

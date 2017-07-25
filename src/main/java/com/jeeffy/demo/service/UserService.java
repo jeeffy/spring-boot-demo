@@ -15,12 +15,12 @@ public class UserService {
     @Autowired
 	private UserDao userDao;
 	
-	public List<User> get(User user) {
+	public List<User> list(User user) {
 	    Example<User> example = Example.of(user);
         return userDao.findAll(example);
 	}
 	
-	public User getById(Integer id) {
+	public User get(Integer id) {
 		return userDao.findOne(id);
 	}
 
