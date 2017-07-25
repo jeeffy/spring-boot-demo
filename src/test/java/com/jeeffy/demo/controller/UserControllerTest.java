@@ -16,7 +16,11 @@ public class UserControllerTest extends BaseTest {
 
     @Test
     public void testList() throws Exception {
-        mvc.perform(get(baseUrl))
+        String data = "deptId=10";
+        mvc.perform(get(baseUrl)
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .content(data)
+        )
                 .andDo(print())
                 .andExpect(jsonPath("$").isArray());
     }
@@ -30,7 +34,7 @@ public class UserControllerTest extends BaseTest {
 
     @Test
     public void testSave() throws Exception {
-        String data = "id=125&username=张三&account=qa";
+        String data = "";
         mvc.perform(post(baseUrl)
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .content(data)
