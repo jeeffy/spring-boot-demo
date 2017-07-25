@@ -2,6 +2,7 @@ package com.jeeffy.demo.bean;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -19,6 +20,17 @@ public class User{
 
 	private String createBy;
 	private Date createTime;
+
+	@OneToMany(mappedBy = "user")
+	private List<Bill> bills;
+
+	public List<Bill> getBills() {
+		return bills;
+	}
+
+	public void setBills(List<Bill> bills) {
+		this.bills = bills;
+	}
 
 	public Integer getId() {
 		return id;

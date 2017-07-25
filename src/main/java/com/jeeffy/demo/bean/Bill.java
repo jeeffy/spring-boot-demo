@@ -1,10 +1,7 @@
 package com.jeeffy.demo.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 import java.util.Date;
-import javax.persistence.Id;
 
 
 @Entity
@@ -29,6 +26,18 @@ public class Bill{
 	private Integer websiteId;
 	private Integer billStatus;
 	private String billCreateTbdw;
+
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public Integer getBillId() {
 		return billId;
