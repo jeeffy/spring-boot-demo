@@ -1,7 +1,9 @@
 package com.jeeffy.demo.service;
 
 import java.util.List;
+import java.util.Map;
 
+import com.jeeffy.demo.bean.User2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
@@ -40,7 +42,12 @@ public class UserService {
 		return  userDao.findByUsername(username);
 	}
 
-	public List<User> findByDeptId(Integer deptId){
+	public List<Map> findByDeptId(Integer deptId){
 		return userDao.findByDeptId(deptId);
+	}
+
+	@Transactional
+	public void deleteByDeptId(Integer deptId){
+		userDao.deleteByDeptId(deptId);
 	}
 }

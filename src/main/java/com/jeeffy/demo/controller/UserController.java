@@ -1,7 +1,9 @@
 package com.jeeffy.demo.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import com.jeeffy.demo.bean.User2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +23,8 @@ public class UserController {
 		return userService.list(user);
     }
 
-    @GetMapping("/deptId")
-    public List<User> findByDeptId(Integer deptId) {
+    @GetMapping("/deptId/{deptId}")
+    public List<Map> findByDeptId(@PathVariable Integer deptId) {
         return userService.findByDeptId(deptId);
     }
 
@@ -45,5 +47,11 @@ public class UserController {
     public int delete(@PathVariable Integer id) {
 		return userService.delete(id);
     }
-    
+
+    @DeleteMapping("deptId/{id}")
+    public int deleteByDeptId(@PathVariable Integer id) {
+        userService.deleteByDeptId(id);
+        return 1;
+    }
+
 }
