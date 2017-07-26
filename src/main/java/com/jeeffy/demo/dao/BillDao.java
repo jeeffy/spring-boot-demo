@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface BillDao extends JpaRepository<Bill, Integer>{
-	//@Query("select b from Bill b where b.user.username = :username")
-	@Query
+
+    @Query("select b from Bill b where b.user.username = :username")
     List<Bill> findByUsername(@Param("username") String username);
 }

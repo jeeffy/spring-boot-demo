@@ -13,12 +13,13 @@ public interface UserDao extends JpaRepository<User, Integer>{
 
     User findByUsername(String username);
 
-    @Query("select u.id as id, u.username as username from User u where u.deptId = :deptId and id<112")
+    //@Query("select u.id as id, u.username as username from User u where u.deptId = :deptId and id<112")
+    @Query
     List<User2> findByDeptId2(@Param("deptId") Integer deptId);
 
     //@Query("select u.id as id, u.username as username from User u where u.deptId = :deptId")
-    //@Query
-    List<Map> findByDeptId(@Param("deptId") Integer deptId);
+    @Query
+    List findByDeptId(@Param("deptId") Integer deptId);
 
     void deleteByDeptId(Integer deptId);
 }

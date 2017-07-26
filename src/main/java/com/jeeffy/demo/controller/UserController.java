@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping("/deptId/{deptId}")
-    public List<Map> findByDeptId(@PathVariable Integer deptId) {
+    public List<User2> findByDeptId(@PathVariable Integer deptId) {
         return userService.findByDeptId(deptId);
     }
 

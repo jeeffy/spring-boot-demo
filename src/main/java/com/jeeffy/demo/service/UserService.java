@@ -42,8 +42,8 @@ public class UserService {
 		return  userDao.findByUsername(username);
 	}
 
-	public List<Map> findByDeptId(Integer deptId){
-		return userDao.findByDeptId(deptId);
+	public List<User2> findByDeptId(Integer deptId){
+		return userDao.findByDeptId2(deptId);
 	}
 
 	@Transactional
