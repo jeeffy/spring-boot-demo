@@ -1,16 +1,14 @@
 package com.jeeffy.demo.service;
 
-import java.util.List;
-import java.util.Map;
-
+import com.jeeffy.demo.bean.User;
 import com.jeeffy.demo.bean.User2;
+import com.jeeffy.demo.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.jeeffy.demo.dao.UserDao;
-import com.jeeffy.demo.bean.User;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -33,9 +31,8 @@ public class UserService {
 	}
 
 	@Transactional
-	public int delete(Integer id) {
+	public void delete(Integer id) {
 		userDao.delete(id);
-		return 1;
 	}
 
 	public User findByUsername(String username){
