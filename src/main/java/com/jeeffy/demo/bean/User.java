@@ -1,6 +1,8 @@
 package com.jeeffy.demo.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -15,7 +17,9 @@ public class User {
 	private String mail;
 	@JsonIgnore
 	private String createBy;
-	@JsonIgnore
+
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createTime;
 
 	public Integer getId() {
