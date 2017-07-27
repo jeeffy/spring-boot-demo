@@ -1,9 +1,9 @@
 package com.jeeffy.demo.dao;
 
+import com.jeeffy.demo.bean.User;
+
 import java.util.List;
 import java.util.Map;
-
-import com.jeeffy.demo.bean.User;
 
 public interface UserDao {
 

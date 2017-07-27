@@ -1,5 +1,7 @@
 package com.jeeffy.demo.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 
 
@@ -11,7 +13,9 @@ public class User {
 	private Integer male;
 	private String phone;
 	private String mail;
+	@JsonIgnore
 	private String createBy;
+	@JsonIgnore
 	private Date createTime;
 
 	public Integer getId() {

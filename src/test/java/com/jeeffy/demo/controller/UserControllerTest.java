@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class UserControllerTest extends BaseTest {
 
     private String baseUrl = "/users/";
-    private Integer id = 1;
+    private Integer id = null;
 
     @Test
     public void testList() throws Exception {

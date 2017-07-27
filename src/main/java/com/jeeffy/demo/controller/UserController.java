@@ -1,12 +1,11 @@
 package com.jeeffy.demo.controller;
 
-import java.util.List;
-
+import com.jeeffy.demo.bean.User;
+import com.jeeffy.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.jeeffy.demo.bean.User;
-import com.jeeffy.demo.service.UserService;
+import java.util.List;
 
 @RequestMapping(value = "/users")
 @RestController
@@ -37,8 +36,8 @@ public class UserController {
     }
     
     @DeleteMapping("/{id}")
-    public int delete(@PathVariable Integer id) {
-		return userService.delete(id);
+    public void delete(@PathVariable Integer id) {
+		userService.delete(id);
     }
     
 }
