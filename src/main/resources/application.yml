@@ -15,3 +15,15 @@ logging:
   path: /log
   level:
       root: INFO
+
+authorization.excludePaths:
+  - /
+  - /index
+  - /login
+  - /logout
+  - /error
+  - /info
+  - /swagger-ui.html
+  - /swagger-resources/**
+  - /v2/api-docs
+  - /users
