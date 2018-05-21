@@ -1,6 +1,6 @@
 package com.jeeffy.demo.controller;
 
-import com.jeeffy.demo.BaseTest;
+import com.jeeffy.BaseTest;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 

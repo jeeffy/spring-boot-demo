@@ -1,5 +1,6 @@
-package com.jeeffy.demo;
+package com.jeeffy;
 
+import com.jeeffy.demo.Application;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.runner.RunWith;

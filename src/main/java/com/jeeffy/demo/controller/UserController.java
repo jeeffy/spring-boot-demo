@@ -14,7 +14,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	
 	@GetMapping
     public List<User> list(User user) {
 		return userService.list(user);
@@ -26,12 +25,12 @@ public class UserController {
     }
     
     @PostMapping
-    public User create(User user) {
-		return userService.create(user);
+    public User save(@RequestBody User user) {
+		return userService.save(user);
     }
 
     @PutMapping("/{id}")
-    public User update(User user) {
+    public User update(@RequestBody User user) {
 		return userService.update(user);
     }
     
