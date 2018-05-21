@@ -1,13 +1,11 @@
 package com.jeeffy.demo.config;
 
-import java.beans.PropertyVetoException;
-
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 public class DataSourceConfig {
@@ -15,21 +13,14 @@ public class DataSourceConfig {
     private Environment env;
 
     @Bean(name="dataSource")
-    public ComboPooledDataSource dataSource() throws PropertyVetoException {
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setDriverClass(env.getProperty("spring.datasource.driverClassName"));
-        dataSource.setJdbcUrl(env.getProperty("spring.datasource.url"));
-        dataSource.setUser(env.getProperty("spring.datasource.username"));
-        dataSource.setPassword(env.getProperty("spring.datasource.password"));
-        dataSource.setMaxPoolSize(20);
-        dataSource.setMinPoolSize(5);
-        dataSource.setInitialPoolSize(10);
-        dataSource.setMaxIdleTime(300);
-        dataSource.setAcquireIncrement(5);
-        dataSource.setIdleConnectionTestPeriod(60);
-
-        return dataSource;
+    public HikariDataSource dataSourceHikari() {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl(env.getProperty("spring.datasource.url"));
+        config.setDriverClassName(env.getProperty("spring.datasource.driverClassName"));
+        config.setUsername(env.getProperty("spring.datasource.username"));
+        config.setPassword(env.getProperty("spring.datasource.password"));
+        config.setAutoCommit(true);
+        config.setMaximumPoolSize(20);
+        return new HikariDataSource(config);
     }
-
-
 }

@@ -26,7 +26,7 @@ public class MyBatisConfig {
         configuration.setJdbcTypeForNull(JdbcType.NULL);
         sessionFactory.setConfiguration(configuration);
 
-        sessionFactory.setMapperLocations(applicationContext.getResources("classpath*:com/**/mapper/*.xml"));
+        sessionFactory.setMapperLocations(applicationContext.getResources("classpath:/mapper/**/*.xml"));
         return sessionFactory;
     }
 

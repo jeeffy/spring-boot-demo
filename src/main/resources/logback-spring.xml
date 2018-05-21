@@ -1,0 +1,49 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-5level %date{yyyy-MM-dd HH:mm:ss} %class[%method:%line] - %message%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%-5level %date{yyyy-MM-dd HH:mm:ss} %class[%method:%line] - %message%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-RAW" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/RAW-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%message%n</pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="prod">
+        <root>
+            <appender-ref ref="FILE"/>
+        </root>
+        <logger name="rawLog" additivity="false" level="INFO">
+            <appender-ref ref="FILE-RAW"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="!prod">
+        <root>
+            <appender-ref ref="CONSOLE"/>
+        </root>
+        <root>
+            <appender-ref ref="FILE"/>
+        </root>
+        <logger name="rawLog" additivity="false" level="INFO">
+            <appender-ref ref="FILE-RAW"/>
+        </logger>
+    </springProfile>
+
+</configuration>

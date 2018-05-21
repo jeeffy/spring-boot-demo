@@ -6,10 +6,12 @@ server:
   contextPath: /
 
 spring:
-  profiles:
-      active: dev
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test
     username: root
     password: admin
+logging:
+  path: /var/log
+  level:
+      root: INFO
