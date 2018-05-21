@@ -5,10 +5,10 @@
 
 	<groupId>com.jeeffy</groupId>
 	<artifactId>spring-boot-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>demo</name>
+	<name>spring-boot-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -82,6 +82,7 @@
     </dependencies>
 
 	<build>
+		<finalName>spring-boot-demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
