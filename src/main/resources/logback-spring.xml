@@ -15,23 +15,10 @@
         </encoder>
     </appender>
 
-    <appender name="FILE-RAW" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/RAW-%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>90</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%message%n</pattern>
-        </encoder>
-    </appender>
-
     <springProfile name="prod">
         <root>
             <appender-ref ref="FILE"/>
         </root>
-        <logger name="rawLog" additivity="false" level="INFO">
-            <appender-ref ref="FILE-RAW"/>
-        </logger>
     </springProfile>
 
     <springProfile name="!prod">
@@ -41,9 +28,6 @@
         <root>
             <appender-ref ref="FILE"/>
         </root>
-        <logger name="rawLog" additivity="false" level="INFO">
-            <appender-ref ref="FILE-RAW"/>
-        </logger>
     </springProfile>
 
 </configuration>

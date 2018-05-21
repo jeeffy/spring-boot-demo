@@ -12,6 +12,6 @@ spring:
     username: root
     password: admin
 logging:
-  path: /var/log
+  path: /log
   level:
       root: INFO
